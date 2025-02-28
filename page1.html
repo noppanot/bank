@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ร้านค้าสัตว์เลี้ยง</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #d3c7c7;
+            text-align: center;
+        }
+        header {
+            background-color: #e916b4;
+            padding: 20px;
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        nav {
+            background-color: #92e40d;
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 12px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        nav a:hover {
+            background-color: #e84118;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        .item {
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .gallery img {
+            width: 200px;
+            height: 200px;
+            border-radius: 15px;
+            object-fit: cover;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+        .animal-name {
+            margin-top: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+        .cart {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+        .cart-items {
+            list-style: none;
+            padding: 0;
+        }
+        .cart-items li {
+            font-size: 16px;
+            padding: 5px 0;
+        }
+        footer {
+            background-color: #2f3542;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 16px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>ร้านค้าอาหารสัตว์</header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="page1.html">Products</a>
+        <a href="page2.html">Contact</a>
+        <a href="page3.html">serve</a>
+        <a href="page4.html">Transportation</a>
+       
+    </nav>
+    <div class="cart">
+        <h3>ตะกร้าสินค้า</h3>
+        <ul class="cart-items"></ul>
+    </div>
+    
+    <section id="products">
+        <h2>แนะนำสัตว์เลี้ยงของเรา</h2>
+        <div class="gallery">
+            <div class="item" onclick="addToCart('อาหารแมว')">
+                <img src="https://cdn.onemars.net/sites/whiskas_th_r81SA_mwh5/image/whiskas-3d-1-1kg-fop-adult-skincoat-2_1713965503406_1720699118847.png" alt="อาหารแมว">
+                <div class="animal-name">อาหารแมว100$</div>
+            </div>
+            <div class="item" onclick="addToCart('อาหารสุนัข')">
+                <img src="https://www.dohome.co.th/media/catalog/product/cache/e446f15aaa8dc66b80b7a0df334f7c5a/1/0/10194045_bag_1200_1.jpg" alt="อาหารสุนัข">
+                <div class="animal-name">อาหารสุนัข200$</div>
+            </div>
+            <div class="item" onclick="addToCart('อาหารหนูตะเภา')">
+                <img src="https://tailybuddy.com/products/9403/Little_One_Alleinfutter_f%C3%BCr_Meerschweinchen.jpg" alt="อาหารหนูตะเภา">
+                <div class="animal-name">อาหารหนูตะเภา350$</div>
+            </div>    
+                <div class="item" onclick="addToCart('อาหารกระต่าย')">
+                    <img src="https://bluefalogroup.com/wp-content/uploads/2023/09/Rab.png" alt="อาหารกระต่าย">
+                    <div class="animal-name">อาหารกระต่าย400$</div>
+            </div>
+            <div class="item" onclick="addToCart('อาหารนกแก้ว')">
+                <img src="https://image-pcgshoponline.s3.ap-southeast-1.amazonaws.com/8a477601-AW_Bird_Size-700x700Px_SH_14.jpg" alt="อาหารนกแก้ว">
+                <div class="animal-name">อาหารนกแก้ว200$</div>
+        </div>
+        <div class="item" onclick="addToCart('อาหารปลากัด')">
+            <img src="https://image.makewebeasy.net/makeweb/m_1920x0/Xvl9zU3wX/4/96.jpg" alt="อาหารปลากัด">
+            <div class="animal-name">อาหารปลากัด100$</div>
+    </div>
+    <div class="item" onclick="addToCart('อาหารเต่ายักษ์')">
+        <img src="https://down-th.img.susercontent.com/file/th-11134207-7r98s-lvh642fsosuhdc" alt="อาหารเต่ายักษ์">
+        <div class="animal-name">อาหารเต่ายักษ์800$</div>
+</div> 
+
+<div class="gallery">
+    <div class="item" onclick="addToCart('อาหารแมว')">
+        <img src="https://st.bigc-cs.com/cdn-cgi/image/format=webp,quality=90/public/media/catalog/product/73/88/8850477054073/8850477054073.jpg" alt="อาหารแมว">
+        <div class="animal-name">อาหารแมว100$</div>
+    </div>
+    <div class="item" onclick="addToCart('อาหารสุนัข')">
+        <img src="https://www.pedigree.co.th/cdn-cgi/image/format=auto,q=90/sites/g/files/fnmzdf5991/files/2024-04/8853301893718-product-image-1.png" alt="อาหารสุนัข">
+        <div class="animal-name">อาหารสุนัข200$</div>
+    </div>
+    <div class="item" onclick="addToCart('อาหารหนูตะเภา')">
+        <img src="https://down-th.img.susercontent.com/file/1783ff00f3dea8be9089872b7de826a4" alt="อาหารหนูตะเภา">
+        <div class="animal-name">อาหารหนูตะเภา350$</div>
+    </div>    
+        <div class="item" onclick="addToCart('อาหารกระต่าย')">
+            <img src="https://img.th.my-best.com/product_images/1b6249953b162975205eba224e37db47.png?ixlib=rails-4.3.1&q=70&lossless=0&w=800&h=800&fit=clip&s=bc0144112dc1c44f29c07beff8ab9272" alt="อาหารกระต่าย">
+            <div class="animal-name">อาหารกระต่าย400$</div>
+    </div>
+    <div class="item" onclick="addToCart('อาหารนกแก้ว')">
+        <img src="https://tailybuddy.com/products/9399/RIO_Daily_feed_for_parrots.jpg" alt="อาหารนกแก้ว">
+        <div class="animal-name">อาหารนกแก้ว200$</div>
+</div>
+<div class="item" onclick="addToCart('อาหารปลากัด')">
+    <img src="https://tailybuddy.com/products/452/betta1.jpg" alt="อาหารปลากัด">
+    <div class="animal-name">อาหารปลากัด100$</div>
+</div>
+<div class="item" onclick="addToCart('อาหารเต่ายักษ์')">
+<img src="https://down-th.img.susercontent.com/file/th-11134201-7r98r-llejfoagoai4ac_tn.webp" alt="อาหารเต่ายักษ์">
+<div class="animal-name">อาหารเต่ายักษ์800$</div>
+</div>
+
+<div class="gallery">
+    <div class="item" onclick="addToCart('อาหารแมว')">
+        <img src="https://www.purina.co.th/sites/default/files/2022-01/Friskies%20Kitten%20Discoveries2021.jpg" alt="อาหารแมว">
+        <div class="animal-name">อาหารแมว100$</div>
+    </div>
+    <div class="item" onclick="addToCart('อาหารสุนัข')">
+        <img src="https://www.purina.co.th/sites/default/files/2022-03/1.png" alt="อาหารสุนัข">
+        <div class="animal-name">อาหารสุนัข200$</div>
+    </div>
+    <div class="item" onclick="addToCart('อาหารหนูตะเภา')">
+        <img src="https://down-th.img.susercontent.com/file/th-11134207-7r98w-lrg0fku7el4e4b" alt="อาหารหนูตะเภา">
+        <div class="animal-name">อาหารหนูตะเภา350$</div>
+    </div>    
+        <div class="item" onclick="addToCart('อาหารกระต่าย')">
+            <img src="https://image-pcgshoponline.s3.ap-southeast-1.amazonaws.com/3476b1f4-SHG%20Zelect%20Muesli-Adult-9kg_x1.jpg" alt="อาหารกระต่าย">
+            <div class="animal-name">อาหารกระต่าย400$</div>
+    </div>
+    <div class="item" onclick="addToCart('อาหารนกแก้ว')">
+        <img src="https://www.perfectcompanion.com/uploads/stock/ff820518-3d75-4780-a500-0364ea498739.png" alt="อาหารนกแก้ว">
+        <div class="animal-name">อาหารนกแก้ว200$</div>
+</div>
+<div class="item" onclick="addToCart('อาหารปลากัด')">
+    <img src="https://cache-igetweb-v2.mt108.info/uploads/images-cache/4227/product/15ecd2fdb63708dbd6faa14bf98c070b_full.jpg" alt="อาหารปลากัด">
+    <div class="animal-name">อาหารปลากัด100$</div>
+</div>
+<div class="item" onclick="addToCart('อาหารเต่ายักษ์')">
+<img src="https://img.salehere.co.th/p/1200x0/2024/05/13/xmrk7r3wevdm.jpg" alt="อาหารเต่ายักษ์">
+<div class="animal-name">อาหารเต่ายักษ์800$</div>
+</div>
+
+        </div>
+        <script>
+            function addToCart(item) {
+                let cartList = document.querySelector(".cart-items");
+                let li = document.createElement("li");
+                li.textContent = item;
+                cartList.appendChild(li);
+                alert(item + " ถูกเพิ่มลงในตะกร้า!");
+            }
+        </script>
